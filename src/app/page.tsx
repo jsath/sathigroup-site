@@ -89,16 +89,15 @@ function Hero() {
           </p>
         </div>
         <h1 className="text-display font-bold text-ink animate-fade-up-delay-1">
-          The future satisfies
+          We build AI tools
           <br />
-          no one who waits.
+          for your business.
         </h1>
         <div className="mt-10 grid lg:grid-cols-12 gap-8 animate-fade-up-delay-2">
           <div className="lg:col-span-5 lg:col-start-8">
             <p className="text-lg text-ink-muted leading-relaxed">
-              The gap between AI adopters and everyone else is widening every day.
-              Sathi Group provides the strategic clarity and hands-on implementation
-              to ensure you&apos;re on the right side of that divide.
+              Custom AI agents that replace expensive software, automate operations,
+              and give your team leverage that compounds every single day.
             </p>
           </div>
         </div>

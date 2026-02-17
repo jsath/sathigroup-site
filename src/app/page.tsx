@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
 const CALENDLY_URL = "https://calendly.com";
 
@@ -53,10 +54,10 @@ function Nav() {
           SATHI GROUP
         </a>
         <div className="hidden sm:flex items-center gap-8">
-          {["Approach", "Contact"].map((l) => (
+          {["Approach", "Use Cases", "Case Studies", "Contact"].map((l) => (
             <a
               key={l}
-              href={`#${l.toLowerCase()}`}
+              href={l === "Case Studies" ? "/case-studies" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
               className="text-[13px] text-ink-muted hover:text-ink transition-colors link-underline"
             >
               {l}
@@ -252,6 +253,156 @@ function WhatWeDo() {
   );
 }
 
+/* ─── Use Cases ─── */
+
+const useCases = [
+  {
+    title: "Intelligence Dashboards",
+    description:
+      "Your AI pulls live data from Shopify, ad platforms, CRMs, and financial tools — then builds real-time KPI dashboards tailored to what actually matters. One screen. Zero logins.",
+  },
+  {
+    title: "Hiring on Autopilot",
+    description:
+      "Job descriptions written, posted across platforms, candidates screened, and the top 5% surfaced to your inbox. The entire pipeline runs before you finish your morning coffee.",
+  },
+  {
+    title: "Websites in Minutes",
+    description:
+      "Production websites — designed, built, and deployed to the live internet. What agencies quote six weeks for, your AI delivers in fifteen minutes.",
+  },
+  {
+    title: "Kill Your SaaS Bloat",
+    description:
+      "CRM, scheduling, reporting, internal tools — all custom-built by your AI, replacing thousands in monthly subscriptions with systems that actually fit your workflow.",
+  },
+  {
+    title: "Lead Generation Engine",
+    description:
+      "Directories scraped, contacts enriched, personalized outreach drafted, pipeline filled. Runs 24/7 with no commissions, no quotas, and no sick days.",
+  },
+  {
+    title: "Competitor Intelligence",
+    description:
+      "Your AI monitors competitor websites, pricing pages, and product updates in real time. The moment they change anything — you know before their own customers do.",
+  },
+  {
+    title: "Email & Comms Automation",
+    description:
+      "Inbox sorted by priority, replies drafted, follow-ups auto-scheduled. Your AI handles the communication overhead so you stay focused on closing.",
+  },
+  {
+    title: "Financial Ops & Reporting",
+    description:
+      "Transactions auto-reconciled, P&L reports generated, anomalies flagged instantly. A part-time CFO that works around the clock and never misses a line item.",
+  },
+  {
+    title: "Content Machine",
+    description:
+      "Social posts, newsletters, blog drafts, and marketing copy — all in your brand voice, all on schedule. Consistent output without hiring a content team.",
+  },
+  {
+    title: "Customer Support",
+    description:
+      "Tier-1 tickets handled, FAQs answered, escalations routed intelligently. Responses in seconds, not hours. Your customers never wait again.",
+  },
+];
+
+function UseCases() {
+  const { ref, inView } = useInView(0.08);
+  return (
+    <section id="use-cases" ref={ref} className="px-6 lg:px-8 py-24">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="rule mb-16" />
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 mb-16">
+          <div className="lg:col-span-4">
+            <p
+              className={`font-mono text-[13px] text-ink-muted tracking-[0.1em] mb-3 transition-all duration-700 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              USE CASES
+            </p>
+            <h2
+              className={`text-headline font-bold text-ink text-balance transition-all duration-700 delay-100 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              What your AI
+              <br />
+              actually does.
+            </h2>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <p
+              className={`text-lg text-ink-muted leading-[1.75] transition-all duration-700 delay-200 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+            >
+              Not hypotheticals. Not demos. These are production systems we deploy
+              into real businesses — running live, generating ROI, compounding daily.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-0">
+          {useCases.map((uc, i) => (
+            <div
+              key={i}
+              className={`border-t border-sand-300/60 py-8 transition-all duration-700 ${
+                inView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: `${Math.min((i + 1) * 80, 800)}ms` }}
+            >
+              <div className="flex gap-4">
+                <span className="font-mono text-[13px] text-sand-400 tracking-wide pt-1 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold text-ink mb-2">
+                    {uc.title}
+                  </h3>
+                  <p className="text-ink-muted leading-relaxed text-[15px]">
+                    {uc.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          className={`mt-12 transition-all duration-700 delay-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+        >
+          <Link
+            href="/case-studies"
+            className="inline-flex items-center gap-2 text-[13px] font-mono text-ink-muted hover:text-ink transition-colors group tracking-[0.05em]"
+          >
+            <span>SEE CLIENT RESULTS</span>
+            <svg
+              className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.5}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+              />
+            </svg>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ─── How It Works ─── */
 
 const steps = [
@@ -336,64 +487,76 @@ function HowItWorks() {
 
 const tiers = [
   {
-    label: "Individuals & Operators",
+    label: "The Founder Running on Fumes",
     description:
-      "Founders, executives, and independent professionals who want to personally harness AI — with a dedicated coach and custom-built AI systems tailored to your workflow.",
+      "You&apos;re wearing six hats, drowning in ops, and know AI could change everything — but don&apos;t have 40 hours to figure it out. We hand you a fully deployed AI workforce in weeks, not quarters.",
   },
   {
-    label: "Growth Companies",
+    label: "The Growth-Stage Operator",
     description:
-      "Teams under 25 people ready to embed AI across their operations. In-person or virtual training, multiple custom AI deployments, and 60 days of strategic support.",
+      "Revenue is climbing but headcount is eating margin. You need to 10x output without 10x payroll. We embed AI across your operations so a team of 8 performs like a team of 30.",
   },
   {
-    label: "Enterprise",
+    label: "The Agency & Services Leader",
     description:
-      "Large organizations requiring full-scale AI transformation. Comprehensive strategy, deployment, training, and ongoing advisory at the highest level.",
+      "Client work is manual, reporting takes days, and every new account means another hire. We automate the delivery layer so you scale revenue without scaling headcount.",
+  },
+  {
+    label: "The Enterprise Executive",
+    description:
+      "Your board wants an AI strategy yesterday. Your team doesn&apos;t know where to start. We provide the strategic roadmap and deploy production systems that justify the investment in 60 days.",
   },
 ];
 
 function WhoItsFor() {
   const { ref, inView } = useInView();
   return (
-    <section ref={ref} className="px-6 lg:px-8 py-24">
+    <section ref={ref} className="px-6 lg:px-8 py-24 bg-ink text-sand-100">
       <div className="mx-auto max-w-[1200px]">
-        <div className="rule mb-16" />
         <div
           className={`mb-16 transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <p className="font-mono text-[13px] text-ink-muted tracking-[0.1em] mb-3">
+          <p className="font-mono text-[13px] text-sand-500 tracking-[0.1em] mb-3">
             WHO IT&apos;S FOR
           </p>
-          <h2 className="text-headline font-bold text-ink text-balance">
-            Serious operators only.
+          <h2 className="text-headline font-bold text-sand-100 text-balance">
+            Serious operators who want to
+            <br />
+            100x output — not headcount.
           </h2>
+          <p className="text-sand-400 leading-[1.75] mt-6 max-w-2xl">
+            We don&apos;t work with tire-kickers or &ldquo;AI-curious&rdquo; window shoppers.
+            Our clients are builders, founders, and executives who understand that the
+            leverage is real — and the window to capture it is closing.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-0">
           {tiers.map((tier, i) => (
             <div
               key={i}
-              className={`border-t border-sand-300/60 pt-8 transition-all duration-700 ${
+              className={`border-t border-sand-800 pt-8 pb-10 transition-all duration-700 ${
                 inView
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: `${(i + 1) * 120}ms` }}
             >
-              <h3 className="text-lg font-semibold text-ink mb-3">
+              <h3 className="text-lg font-semibold text-sand-100 mb-3">
                 {tier.label}
               </h3>
-              <p className="text-ink-muted leading-relaxed text-[15px]">
-                {tier.description}
-              </p>
+              <p
+                className="text-sand-400 leading-relaxed text-[15px]"
+                dangerouslySetInnerHTML={{ __html: tier.description }}
+              />
             </div>
           ))}
         </div>
 
         <div
-          className={`mt-12 transition-all duration-700 delay-500 ${
+          className={`mt-8 transition-all duration-700 delay-500 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -401,7 +564,7 @@ function WhoItsFor() {
             href={CALENDLY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[13px] font-mono text-ink-muted hover:text-ink transition-colors group tracking-[0.05em]"
+            className="inline-flex items-center gap-2 text-[13px] font-mono text-sand-500 hover:text-sand-100 transition-colors group tracking-[0.05em]"
           >
             <span>APPLY FOR A CONSULTATION</span>
             <svg
@@ -518,6 +681,7 @@ export default function Home() {
         <Hero />
         <Problem />
         <WhatWeDo />
+        <UseCases />
         <HowItWorks />
         <WhoItsFor />
         <CTA />

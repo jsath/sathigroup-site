@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const CALENDLY_URL = "https://calendly.com";
+const CALENDLY_URL = "https://app.lemcal.com/@johann";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);

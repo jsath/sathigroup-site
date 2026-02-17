@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const CALENDLY_URL = "https://calendly.com";
+const CALENDLY_URL = "https://app.lemcal.com/@johann";
 
 /* ─── Intersection Observer Hook ─── */
 

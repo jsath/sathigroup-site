@@ -72,3 +72,14 @@
 .link-underline:hover::after {
   @apply scale-x-100 origin-left;
 }
+
+/* Article content styles */
+.article-content a {
+  @apply text-ink font-medium underline underline-offset-2 decoration-sand-400 hover:decoration-ink transition-colors;
+}
+.article-content p {
+  @apply mb-4;
+}
+.article-content p:last-child {
+  @apply mb-0;
+}

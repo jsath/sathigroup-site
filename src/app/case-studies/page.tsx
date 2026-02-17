@@ -58,6 +58,12 @@ function Nav() {
           >
             Home
           </Link>
+          <Link
+            href="/blog"
+            className="text-[13px] text-ink-muted hover:text-ink transition-colors link-underline"
+          >
+            Insights
+          </Link>
           <a
             href={CALENDLY_URL}
             target="_blank"

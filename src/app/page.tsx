@@ -54,13 +54,19 @@ function Nav() {
           SATHI GROUP
         </a>
         <div className="hidden sm:flex items-center gap-8">
-          {["Services", "Use Cases", "Case Studies", "Contact"].map((l) => (
+          {[
+            { label: "Services", href: "#services" },
+            { label: "Use Cases", href: "#use-cases" },
+            { label: "Case Studies", href: "/case-studies" },
+            { label: "Insights", href: "/blog" },
+            { label: "Contact", href: "#contact" },
+          ].map((l) => (
             <a
-              key={l}
-              href={l === "Case Studies" ? "/case-studies" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
+              key={l.label}
+              href={l.href}
               className="text-[13px] text-ink-muted hover:text-ink transition-colors link-underline"
             >
-              {l}
+              {l.label}
             </a>
           ))}
           <a

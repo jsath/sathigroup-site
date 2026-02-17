@@ -54,7 +54,7 @@ function Nav() {
           SATHI GROUP
         </a>
         <div className="hidden sm:flex items-center gap-8">
-          {["Approach", "Use Cases", "Case Studies", "Contact"].map((l) => (
+          {["Services", "Use Cases", "Case Studies", "Contact"].map((l) => (
             <a
               key={l}
               href={l === "Case Studies" ? "/case-studies" : `#${l.toLowerCase().replace(/\s+/g, "-")}`}
@@ -190,26 +190,21 @@ function Problem() {
 
 const services = [
   {
-    title: "AI Strategy & Coaching",
+    title: "AI Coaching",
     description:
-      "One-on-one advisory that cuts through the noise. We assess your operations, identify the highest-leverage AI opportunities, and build a roadmap tailored to your business.",
+      "Hands-on training that teaches you how to properly implement AI in ways that actually grow your business. Not theory — real workflows, real tools, real results. You walk away knowing exactly how to leverage AI across every part of your operation.",
   },
   {
-    title: "Custom AI Implementation",
+    title: "AI Development",
     description:
-      "Purpose-built AI agents and automation systems deployed directly into your workflow. Not demos — working infrastructure that delivers measurable ROI from day one.",
-  },
-  {
-    title: "Team Training & Enablement",
-    description:
-      "Transform your team from AI-curious to AI-native. In-person or virtual programs that embed AI fluency into your company culture and daily operations.",
+      "We build secure, production-grade AI employees that plug directly into your business. Custom agents that handle your operations, communicate with your team, and compound their value every single day. Built to your specs, deployed in days.",
   },
 ];
 
 function WhatWeDo() {
   const { ref, inView } = useInView();
   return (
-    <section id="approach" ref={ref} className="px-6 lg:px-8 py-24 bg-ink text-sand-100">
+    <section id="services" ref={ref} className="px-6 lg:px-8 py-24 bg-ink text-sand-100">
       <div className="mx-auto max-w-[1200px]">
         <div
           className={`mb-16 transition-all duration-700 ${
@@ -217,12 +212,12 @@ function WhatWeDo() {
           }`}
         >
           <p className="font-mono text-[13px] text-sand-500 tracking-[0.1em] mb-3">
-            WHAT WE DO
+            SERVICES
           </p>
           <h2 className="text-headline font-bold text-sand-100 text-balance">
-            Cognitive leverage,
+            Two ways we
             <br />
-            deployed with precision.
+            transform your business.
           </h2>
         </div>
 

@@ -433,7 +433,7 @@ const team = [
     bio: "Built and sold multiple companies before turning 21. Deep technical background in AI systems architecture, with a track record of turning complex technology into operational advantage for businesses across industries.",
   },
   {
-    name: "Darian Smith",
+    name: "Darien K. Smith",
     role: "Sales Strategist & Co-Founder",
     bio: "Sales strategist and LinkedIn thought leader with a proven ability to build high-performance revenue engines. Brings the commercial acumen and go-to-market expertise that ensures AI investments translate directly to business growth.",
   },

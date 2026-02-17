@@ -53,7 +53,7 @@ function Nav() {
           SATHI GROUP
         </a>
         <div className="hidden sm:flex items-center gap-8">
-          {["Approach", "Team", "Contact"].map((l) => (
+          {["Approach", "Contact"].map((l) => (
             <a
               key={l}
               href={`#${l.toLowerCase()}`}
@@ -424,65 +424,6 @@ function WhoItsFor() {
   );
 }
 
-/* ─── Team ─── */
-
-const team = [
-  {
-    name: "Johann Sathianathen",
-    role: "AI Architect & Co-Founder",
-    bio: "Built and sold multiple companies before turning 21. Deep technical background in AI systems architecture, with a track record of turning complex technology into operational advantage for businesses across industries.",
-  },
-  {
-    name: "Darien K. Smith",
-    role: "Sales Strategist & Co-Founder",
-    bio: "Sales strategist and LinkedIn thought leader with a proven ability to build high-performance revenue engines. Brings the commercial acumen and go-to-market expertise that ensures AI investments translate directly to business growth.",
-  },
-];
-
-function Team() {
-  const { ref, inView } = useInView();
-  return (
-    <section id="team" ref={ref} className="px-6 lg:px-8 py-24 bg-ink text-sand-100">
-      <div
-        className={`mx-auto max-w-[1200px] transition-all duration-1000 ${
-          inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}
-      >
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <p className="font-mono text-[13px] text-sand-500 tracking-[0.1em] mb-3">
-              LEADERSHIP
-            </p>
-            <h2 className="text-headline font-bold text-sand-100">
-              Built by operators,
-              <br />
-              for operators.
-            </h2>
-          </div>
-          <div className="lg:col-span-7 lg:col-start-6">
-            <div className="space-y-0">
-              {team.map((person, i) => (
-                <div
-                  key={i}
-                  className="border-t border-sand-800 py-8"
-                >
-                  <div className="flex flex-col lg:flex-row lg:items-center gap-1 lg:gap-4 mb-3">
-                    <h3 className="text-xl font-semibold text-sand-100">
-                      {person.name}
-                    </h3>
-                    <span className="text-sm text-sand-500">{person.role}</span>
-                  </div>
-                  <p className="text-sand-400 leading-[1.75]">{person.bio}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ─── CTA ─── */
 
 function CTA() {
@@ -579,7 +520,6 @@ export default function Home() {
         <WhatWeDo />
         <HowItWorks />
         <WhoItsFor />
-        <Team />
         <CTA />
       </main>
       <Footer />

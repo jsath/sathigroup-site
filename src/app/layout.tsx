@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://sathigroup.ai/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sathi Group — We Build AI Tools For Your Business",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: "Sathi Group — We Build AI Tools For Your Business",
     description:
       "Custom AI agents that replace expensive software, automate operations, and give your team leverage that compounds every day.",
-    images: ["/og-image.png"],
+    images: ["https://sathigroup.ai/og-image.png"],
   },
   robots: {
     index: true,

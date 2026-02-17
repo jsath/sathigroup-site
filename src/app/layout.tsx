@@ -10,15 +10,60 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sathi Group — Premium AI Advisory",
+  title: "Sathi Group — We Build AI Tools For Your Business",
   description:
-    "White-glove AI coaching, implementation, and transformation for individuals and enterprises. The companies that move now will own the next decade.",
+    "Custom AI agents that replace expensive software, automate operations, and give your team leverage that compounds every day. Coaching, implementation, and transformation for serious operators.",
+  metadataBase: new URL("https://sathigroup.ai"),
+  keywords: [
+    "AI consulting",
+    "AI implementation",
+    "AI agents",
+    "business automation",
+    "AI coaching",
+    "AI transformation",
+    "custom AI tools",
+    "AI for business",
+  ],
+  authors: [{ name: "Sathi Group" }],
+  creator: "Sathi Group",
   openGraph: {
-    title: "Sathi Group — Premium AI Advisory",
+    title: "Sathi Group — We Build AI Tools For Your Business",
     description:
-      "White-glove AI coaching, implementation, and transformation for individuals and enterprises.",
+      "Custom AI agents that replace expensive software, automate operations, and give your team leverage that compounds every day.",
     type: "website",
     url: "https://sathigroup.ai",
+    siteName: "Sathi Group",
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sathi Group — We Build AI Tools For Your Business",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sathi Group — We Build AI Tools For Your Business",
+    description:
+      "Custom AI agents that replace expensive software, automate operations, and give your team leverage that compounds every day.",
+    images: ["/og-image.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 

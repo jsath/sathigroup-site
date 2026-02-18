@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-const CALENDLY_URL = "https://app.lemcal.com/@johann";
+const CALENDLY_URL = "mailto:kate@sathigroup.ai?subject=AI%20Automation%20Inquiry&body=Hi%20Kate%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20Sathi%20Group%27s%20AI%20automation%20services.%0A%0A";
 
 interface Section {
   heading: string;
@@ -62,7 +62,7 @@ export default function ArticlePage({
               rel="noopener noreferrer"
               className="text-[13px] font-mono tracking-[0.05em] text-ink border border-ink/20 px-4 py-2 hover:bg-ink hover:text-sand-50 transition-all duration-300"
             >
-              Book a Call
+              Get in Touch
             </a>
           </div>
         </div>

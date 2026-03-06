@@ -1088,31 +1088,9 @@ function SpecializedBrands() {
                   rel="noopener noreferrer"
                   className="block bg-white border border-sand-200 rounded-2xl overflow-hidden hover:border-ink-light/20 transition-all duration-300 hover:shadow-lg"
                 >
-                  {/* Website preview image area */}
-                  <div className={`relative w-full aspect-[16/9] bg-gradient-to-br ${brand.gradient} flex items-center justify-center overflow-hidden`}>
-                    {/* Decorative browser chrome */}
-                    <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 flex items-center px-3 gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-                      <div className="ml-3 flex-1 h-4 bg-white/10 rounded-sm flex items-center px-2">
-                        <span className="text-[9px] text-white/40 font-mono truncate">{brand.tagline}</span>
-                      </div>
-                    </div>
-                    {/* Placeholder content */}
-                    <div className="flex flex-col items-center gap-3 pt-4">
-                      <div className="w-12 h-12 rounded-xl border-2 border-white/20 flex items-center justify-center">
-                        <span className="text-white/60 text-lg font-bold">{brand.name.split(" ").pop()?.charAt(0)}</span>
-                      </div>
-                      <span className="text-white/70 text-sm font-medium tracking-wide">{brand.name}</span>
-                      <div className="flex flex-col gap-1.5 w-3/4 mt-2">
-                        <div className="h-1.5 rounded-full bg-white/10 w-full" />
-                        <div className="h-1.5 rounded-full bg-white/10 w-4/5" />
-                        <div className="h-1.5 rounded-full bg-white/10 w-3/5" />
-                      </div>
-                    </div>
-                    {/* Accent glow */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-16 rounded-full blur-2xl opacity-30" style={{ backgroundColor: brand.accent }} />
+                  {/* Brand logo area */}
+                  <div className={`relative w-full aspect-[2/1] bg-gradient-to-br ${brand.gradient} flex items-center justify-center`}>
+                    <span className="text-white/90 text-2xl sm:text-3xl font-light tracking-wide">{brand.name}</span>
                   </div>
 
                   {/* Card info */}

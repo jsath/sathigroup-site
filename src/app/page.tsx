@@ -1043,30 +1043,32 @@ function SpecializedBrands() {
   const brands = [
     {
       name: "OpenClaw Consultant",
-      description: "Enterprise AI & automation implementation",
       url: "https://openclawconsultant.com",
-      badge: "Technical Division"
+      gradient: "from-[#0f172a] to-[#1e3a5f]",
+      accent: "#3b82f6",
+      tagline: "openclawconsultant.com",
     },
     {
-      name: "OpenClaw Agency", 
-      description: "AI-powered marketing & content automation",
+      name: "OpenClaw Agency",
       url: "https://openclawagency.ai",
-      badge: "Marketing Division"
-    }
+      gradient: "from-[#1a1a2e] to-[#16213e]",
+      accent: "#8b5cf6",
+      tagline: "openclawagency.ai",
+    },
   ];
 
   return (
     <section className="px-6 lg:px-8 py-24 bg-sand-50/30">
       <div className="mx-auto max-w-[1200px]">
         <div className="rule mb-16" />
-        
+
         <FadeInWhenVisible>
           <div className="text-center mb-16">
             <h2 className="text-[32px] sm:text-[42px] leading-[1.1] font-light tracking-[-0.02em] text-ink mb-6">
               Our Specialized Brands
             </h2>
             <p className="text-[16px] leading-[1.6] text-sand-600 max-w-2xl mx-auto">
-              Sathi Group operates multiple focused brands to serve different market segments with specialized expertise. 
+              Sathi Group operates multiple focused brands to serve different market segments with specialized expertise.
               Same expert team, specialized focus areas.
             </p>
           </div>
@@ -1084,49 +1086,69 @@ function SpecializedBrands() {
                   href={brand.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block p-8 bg-white border border-sand-200 rounded-2xl hover:border-ink-light/20 transition-all duration-300 hover:shadow-lg"
+                  className="block bg-white border border-sand-200 rounded-2xl overflow-hidden hover:border-ink-light/20 transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-[20px] font-medium text-ink mb-2 group-hover:text-ink-light transition-colors">
+                  {/* Website preview image area */}
+                  <div className={`relative w-full aspect-[16/9] bg-gradient-to-br ${brand.gradient} flex items-center justify-center overflow-hidden`}>
+                    {/* Decorative browser chrome */}
+                    <div className="absolute top-0 left-0 right-0 h-8 bg-black/20 flex items-center px-3 gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
+                      <div className="ml-3 flex-1 h-4 bg-white/10 rounded-sm flex items-center px-2">
+                        <span className="text-[9px] text-white/40 font-mono truncate">{brand.tagline}</span>
+                      </div>
+                    </div>
+                    {/* Placeholder content */}
+                    <div className="flex flex-col items-center gap-3 pt-4">
+                      <div className="w-12 h-12 rounded-xl border-2 border-white/20 flex items-center justify-center">
+                        <span className="text-white/60 text-lg font-bold">{brand.name.split(" ").pop()?.charAt(0)}</span>
+                      </div>
+                      <span className="text-white/70 text-sm font-medium tracking-wide">{brand.name}</span>
+                      <div className="flex flex-col gap-1.5 w-3/4 mt-2">
+                        <div className="h-1.5 rounded-full bg-white/10 w-full" />
+                        <div className="h-1.5 rounded-full bg-white/10 w-4/5" />
+                        <div className="h-1.5 rounded-full bg-white/10 w-3/5" />
+                      </div>
+                    </div>
+                    {/* Accent glow */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-16 rounded-full blur-2xl opacity-30" style={{ backgroundColor: brand.accent }} />
+                  </div>
+
+                  {/* Card info */}
+                  <div className="p-6 flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-[18px] font-medium text-ink group-hover:text-ink-light transition-colors">
                         {brand.name}
                       </h3>
-                      <span className="inline-block px-3 py-1 text-[11px] font-mono tracking-wide text-ink-muted bg-sand-100 rounded-full">
-                        {brand.badge}
-                      </span>
+                      <motion.div
+                        className="w-4 h-4 text-sand-400 group-hover:text-ink transition-colors"
+                        whileHover={{ rotate: 45 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <LinkIcon className="w-full h-full" />
+                      </motion.div>
                     </div>
-                    <motion.div
-                      className="w-6 h-6 text-sand-400 group-hover:text-ink transition-colors"
-                      whileHover={{ rotate: 45 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <LinkIcon className="w-full h-full" />
-                    </motion.div>
-                  </div>
-                  
-                  <p className="text-[14px] leading-[1.5] text-sand-600 mb-6">
-                    {brand.description}
-                  </p>
-                  
-                  <div className="flex items-center gap-2 text-[12px] font-mono text-ink group-hover:text-ink-light transition-colors">
-                    VISIT SITE
-                    <motion.div
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    >
-                      <ArrowRight className="w-3 h-3" />
-                    </motion.div>
+                    <div className="flex items-center gap-2 text-[12px] font-mono text-ink group-hover:text-ink-light transition-colors">
+                      VISIT SITE
+                      <motion.div
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                      >
+                        <ArrowRight className="w-3 h-3" />
+                      </motion.div>
+                    </div>
                   </div>
                 </a>
               </motion.div>
             </FadeInWhenVisible>
           ))}
         </div>
-        
+
         <FadeInWhenVisible delay={0.6}>
           <div className="text-center mt-12">
             <p className="text-[14px] text-sand-500 font-mono tracking-wide">
-              WHETHER YOU DISCOVERED US THROUGH OPENCLAW OR SATHI GROUP — SAME WORLD-CLASS TEAM
+              MULTIPLE WAYS TO FIND US. SAME WORLD-CLASS TEAM
             </p>
           </div>
         </FadeInWhenVisible>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-const CALENDLY_URL = "mailto:kate@sathigroup.ai?subject=AI%20Automation%20Inquiry&body=Hi%20Kate%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20Sathi%20Group%27s%20AI%20automation%20services.%0A%0A";
+const CALENDLY_URL = "https://app.lemcal.com/@johann/free-ai-audit";
 
 interface Section {
   heading: string;

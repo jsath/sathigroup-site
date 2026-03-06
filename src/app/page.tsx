@@ -22,7 +22,7 @@ import {
   TrendingUp
 } from "lucide-react";
 
-const CALENDLY_URL = "mailto:kate@sathigroup.ai?subject=AI%20Automation%20Inquiry&body=Hi%20Kate%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20Sathi%20Group%27s%20AI%20automation%20services.%0A%0A";
+const CALENDLY_URL = "https://app.lemcal.com/@johann/free-ai-audit";
 
 /* ─── Motion Components ─── */
 
@@ -184,19 +184,9 @@ function Hero() {
     <section className="min-h-[100svh] flex flex-col justify-end px-6 lg:px-8 pb-16 pt-32 relative overflow-hidden">
       <FloatingGeometry />
       
-      {/* Animated gradient background */}
+      {/* Subtle gradient background */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute inset-0 opacity-[0.02]"
-          animate={{
-            background: [
-              "radial-gradient(circle at 20% 80%, #1a1915 0%, transparent 40%)",
-              "radial-gradient(circle at 80% 20%, #1a1915 0%, transparent 40%)",
-              "radial-gradient(circle at 40% 40%, #1a1915 0%, transparent 40%)",
-            ],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
+        <div className="absolute inset-0 opacity-[0.02] bg-gradient-to-br from-ink/10 via-transparent to-ink/5" />
       </div>
       
       <div className="mx-auto max-w-[1200px] w-full relative z-10">
@@ -213,11 +203,7 @@ function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <motion.div
-                  className="w-2 h-2 bg-ink-muted rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
+                <div className="w-2 h-2 bg-ink-muted rounded-full" />
                 AI ADVISORY · IMPLEMENTATION · TRANSFORMATION
               </motion.p>
             </motion.div>
@@ -267,18 +253,13 @@ function Hero() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                BOOK A CONSULTATION
-                <motion.div
-                  animate={{ x: [0, 4, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="w-4 h-4" />
-                </motion.div>
+                BOOK A FREE AI AUDIT
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
           </div>
           
-          {/* Coded graphic instead of stock photo */}
+          {/* Minimal graphic */}
           <div className="lg:col-span-5 flex items-end">
             <motion.div 
               className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-sand-100 to-sand-200 border border-sand-300/50"
@@ -286,95 +267,39 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              {/* Animated network visualization */}
+              {/* Clean grid pattern */}
               <div className="absolute inset-0 p-8">
                 <svg viewBox="0 0 300 200" className="w-full h-full">
-                  {/* Nodes */}
-                  <motion.circle 
-                    cx="60" cy="50" r="4" 
-                    className="fill-ink/30"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0 }}
-                  />
-                  <motion.circle 
-                    cx="150" cy="30" r="5" 
-                    className="fill-ink/40"
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-                  />
-                  <motion.circle 
-                    cx="240" cy="60" r="4" 
-                    className="fill-ink/30"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-                  />
-                  <motion.circle 
-                    cx="80" cy="120" r="6" 
-                    className="fill-ink/50"
-                    animate={{ scale: [1, 1.4, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
-                  />
-                  <motion.circle 
-                    cx="200" cy="140" r="5" 
-                    className="fill-ink/40"
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity, delay: 1.2 }}
-                  />
+                  {/* Static nodes */}
+                  <circle cx="60" cy="50" r="3" className="fill-ink/15" />
+                  <circle cx="150" cy="30" r="4" className="fill-ink/20" />
+                  <circle cx="240" cy="60" r="3" className="fill-ink/15" />
+                  <circle cx="80" cy="120" r="5" className="fill-ink/25" />
+                  <circle cx="200" cy="140" r="4" className="fill-ink/20" />
+                  <circle cx="150" cy="100" r="3" className="fill-ink/15" />
                   
-                  {/* Connections */}
-                  <motion.line 
-                    x1="60" y1="50" x2="150" y2="30" 
-                    className="stroke-ink/20" strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 1.5 }}
-                  />
-                  <motion.line 
-                    x1="150" y1="30" x2="240" y2="60" 
-                    className="stroke-ink/20" strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 1.7 }}
-                  />
-                  <motion.line 
-                    x1="60" y1="50" x2="80" y2="120" 
-                    className="stroke-ink/20" strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 1.9 }}
-                  />
-                  <motion.line 
-                    x1="240" y1="60" x2="200" y2="140" 
-                    className="stroke-ink/20" strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 2.1 }}
-                  />
-                  <motion.line 
-                    x1="80" y1="120" x2="200" y2="140" 
-                    className="stroke-ink/20" strokeWidth="1"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, delay: 2.3 }}
-                  />
+                  {/* Static connections */}
+                  <line x1="60" y1="50" x2="150" y2="30" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="150" y1="30" x2="240" y2="60" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="60" y1="50" x2="80" y2="120" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="240" y1="60" x2="200" y2="140" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="80" y1="120" x2="200" y2="140" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="150" y1="30" x2="150" y2="100" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="150" y1="100" x2="80" y2="120" className="stroke-ink/10" strokeWidth="0.5" />
+                  <line x1="150" y1="100" x2="200" y2="140" className="stroke-ink/10" strokeWidth="0.5" />
                 </svg>
               </div>
               
-              {/* Overlay with icons */}
+              {/* Overlay label */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <motion.div 
                   className="bg-sand-50/80 backdrop-blur-sm rounded-xl p-4 border border-sand-300/50"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 2.8 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
                 >
                   <div className="flex items-center gap-3">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                    >
-                      <Cpu className="w-6 h-6 text-ink/60" />
-                    </motion.div>
+                    <Cpu className="w-5 h-5 text-ink/40" />
                     <div className="text-xs font-mono text-ink-muted">
                       AI SYSTEMS ONLINE
                     </div>
@@ -884,24 +809,10 @@ const tiers = [
 function WhoItsFor() {
   return (
     <section className="px-6 lg:px-8 py-24 bg-ink text-sand-100 relative overflow-hidden">
-      {/* Glassmorphism background elements */}
+      {/* Subtle background elements */}
       <div className="absolute inset-0">
-        <motion.div 
-          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-sand-100/5 to-sand-200/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.6, 0.3] 
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <motion.div 
-          className="absolute bottom-20 left-20 w-48 h-48 bg-gradient-to-tr from-sand-100/5 to-sand-200/10 rounded-full blur-3xl"
-          animate={{ 
-            scale: [1.2, 1, 1.2],
-            opacity: [0.6, 0.3, 0.6] 
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
+        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-sand-100/5 to-sand-200/10 rounded-full blur-3xl opacity-40" />
+        <div className="absolute bottom-20 left-20 w-48 h-48 bg-gradient-to-tr from-sand-100/5 to-sand-200/10 rounded-full blur-3xl opacity-30" />
       </div>
       
       <div className="mx-auto max-w-[1200px] relative z-10">
@@ -1126,6 +1037,104 @@ function CTA() {
   );
 }
 
+/* ─── Our Specialized Brands ─── */
+
+function SpecializedBrands() {
+  const brands = [
+    {
+      name: "OpenClaw Consultant",
+      description: "Enterprise AI & automation implementation",
+      url: "https://openclawconsultant.com",
+      badge: "Technical Division"
+    },
+    {
+      name: "OpenClaw Agency", 
+      description: "AI-powered marketing & content automation",
+      url: "https://openclawagency.ai",
+      badge: "Marketing Division"
+    }
+  ];
+
+  return (
+    <section className="px-6 lg:px-8 py-24 bg-sand-50/30">
+      <div className="mx-auto max-w-[1200px]">
+        <div className="rule mb-16" />
+        
+        <FadeInWhenVisible>
+          <div className="text-center mb-16">
+            <h2 className="text-[32px] sm:text-[42px] leading-[1.1] font-light tracking-[-0.02em] text-ink mb-6">
+              Our Specialized Brands
+            </h2>
+            <p className="text-[16px] leading-[1.6] text-sand-600 max-w-2xl mx-auto">
+              Sathi Group operates multiple focused brands to serve different market segments with specialized expertise. 
+              Same expert team, specialized focus areas.
+            </p>
+          </div>
+        </FadeInWhenVisible>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {brands.map((brand, index) => (
+            <FadeInWhenVisible key={brand.name} delay={index * 0.2}>
+              <motion.div
+                className="group"
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+              >
+                <a
+                  href={brand.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-8 bg-white border border-sand-200 rounded-2xl hover:border-ink-light/20 transition-all duration-300 hover:shadow-lg"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-[20px] font-medium text-ink mb-2 group-hover:text-ink-light transition-colors">
+                        {brand.name}
+                      </h3>
+                      <span className="inline-block px-3 py-1 text-[11px] font-mono tracking-wide text-ink-muted bg-sand-100 rounded-full">
+                        {brand.badge}
+                      </span>
+                    </div>
+                    <motion.div
+                      className="w-6 h-6 text-sand-400 group-hover:text-ink transition-colors"
+                      whileHover={{ rotate: 45 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <LinkIcon className="w-full h-full" />
+                    </motion.div>
+                  </div>
+                  
+                  <p className="text-[14px] leading-[1.5] text-sand-600 mb-6">
+                    {brand.description}
+                  </p>
+                  
+                  <div className="flex items-center gap-2 text-[12px] font-mono text-ink group-hover:text-ink-light transition-colors">
+                    VISIT SITE
+                    <motion.div
+                      animate={{ x: [0, 4, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity }}
+                    >
+                      <ArrowRight className="w-3 h-3" />
+                    </motion.div>
+                  </div>
+                </a>
+              </motion.div>
+            </FadeInWhenVisible>
+          ))}
+        </div>
+        
+        <FadeInWhenVisible delay={0.6}>
+          <div className="text-center mt-12">
+            <p className="text-[14px] text-sand-500 font-mono tracking-wide">
+              WHETHER YOU DISCOVERED US THROUGH OPENCLAW OR SATHI GROUP — SAME WORLD-CLASS TEAM
+            </p>
+          </div>
+        </FadeInWhenVisible>
+      </div>
+    </section>
+  );
+}
+
 /* ─── Footer ─── */
 
 function Footer() {
@@ -1168,6 +1177,7 @@ export default function Home() {
         <UseCases />
         <HowItWorks />
         <WhoItsFor />
+        <SpecializedBrands />
         <CTA />
       </main>
       <Footer />

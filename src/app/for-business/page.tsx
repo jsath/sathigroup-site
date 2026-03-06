@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-const CALENDLY_URL = "mailto:kate@sathigroup.ai?subject=Business%20Automation%20Consultation&body=Hi%20Kate%2C%0A%0AI%27m%20interested%20in%20learning%20more%20about%20how%20you%20can%20help%20automate%20my%20business%20operations.%0A%0AMy%20business%3A%20%0ABest%20time%20to%20call%3A%20%0A%0AThanks%21";
+const CALENDLY_URL = "https://app.lemcal.com/@johann/free-ai-audit";
 
 /* ─── Intersection Observer Hook ─── */
 
@@ -603,7 +603,7 @@ function FinalCTA() {
               </svg>
             </a>
             <p className="font-mono text-[13px] text-sand-400 mt-6">
-              kate@sathigroup.ai • Usually responds within 2 hours
+              Book your free AI audit • Usually responds within 2 hours
             </p>
           </div>
         </div>
